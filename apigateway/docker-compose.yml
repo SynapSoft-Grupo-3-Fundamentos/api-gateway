@@ -1,0 +1,16 @@
+services:
+  api-gateway:
+    container_name: api-gateway
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+        - "8080:8080"
+    image: api-gateway
+    restart:
+        always
+    networks:
+        - app-network
+networks:
+  app-network:
+    external: true
